@@ -1,0 +1,33 @@
+.number__pad-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  &--input {
+    display: grid;
+    place-content: center;
+    background-color: #fafafa;
+    min-height: 56px;
+    box-shadow: 0 5px 5px #3535351a;
+    font-size: 24px;
+    color: var(--ion-color-tertiary);
+  }
+
+  &--input.full {
+    color: var(--color-black);
+  }
+
+  &--input-errors {
+    color: var(--color-error);
+    font-size: 12px;
+  }
+
+  &--buttons {
+    display: grid;
+    place-content: center;
+
+    ion-button {
+      font-size: 32px;
+    }
+  }
+}

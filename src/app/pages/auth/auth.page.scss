@@ -1,0 +1,34 @@
+.auth__content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.auth__main-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+
+  &--grid {
+    display: grid;
+    place-content: center;
+  }
+}
+
+.auth__logo-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.auth__logo {
+  max-width: 100%;
+}
+
+.auth__button {
+    min-height: 50px;
+}

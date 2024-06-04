@@ -1,0 +1,33 @@
+<ion-toolbar>
+  <ion-buttons *ngIf="returnRoute" slot="start">
+    <ion-button [routerLink]="returnRoute">
+      <ion-icon color="primary" name="chevron-back-outline"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+  <ion-title class="ion-text-center">
+    <ion-text color="secondary">
+      <b>{{ title }}</b>
+    </ion-text>
+  </ion-title>
+  <ion-buttons *ngIf="returnRoute" slot="end">
+    <ion-button>
+      <ion-icon></ion-icon>
+    </ion-button>
+  </ion-buttons>  
+</ion-toolbar>
+<section class="stepper" *ngIf="steps.length">
+  <ion-grid>
+    <ion-row class="ion-justify-content-between container">
+      <ion-col *ngFor="let step of steps; let i = index" size="auto" class="ion-no-padding">
+        <ion-item lines="none">
+          <ion-radio-group [value]="getCheck(step) ? step.value : ''" (click)="onChange(step)">
+            <ion-radio
+              mode="md"
+              [value]="step.value" 
+              [disabled]="!getCheck(step)"></ion-radio>
+          </ion-radio-group>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</section>

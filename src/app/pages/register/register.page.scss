@@ -1,0 +1,9 @@
+.register__content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  &-switch {
+    height: 100%;
+  }
+}

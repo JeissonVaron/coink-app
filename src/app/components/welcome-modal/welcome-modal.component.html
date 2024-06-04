@@ -1,0 +1,34 @@
+<section class="welcome-modal">
+  <ion-grid fixed class="ion-padding">
+    <ion-row class="ion-justify-content-center">
+      <ion-col size="auto" class="ion-justify-content-center">
+        <ion-img
+          class="welcome-modal__image"
+          src="../../../assets/icon/coinkGift.png"
+          alt="The Wisconsin State Capitol building in Madison, WI at night"
+        ></ion-img>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+        <ion-text class="ion-text-center">
+          <p class="title">¡Bienvenido a Coink!</p>
+          <p>¡Cuenta creada exitosamente, tu marrano ya está listo para que empieces a ahorrar!</p>
+        </ion-text>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+        <ion-button
+          (click)="closeModal()"
+          type="submit"
+          expand="block"
+          color="primary"
+          shape="round"
+          class="bold"
+        >CONTINUAR</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  
+</section>

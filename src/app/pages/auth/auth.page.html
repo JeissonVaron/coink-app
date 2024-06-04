@@ -1,0 +1,44 @@
+<ion-content class="auth__content ion-padding">
+  <div class="auth__main-content">
+    <ion-grid [fixed]="true" class="auth__main-content--grid">
+      <ion-row>
+        <ion-col size="12">
+          <div class="auth__logo-container">
+            <ion-img
+              class="auth__logo"
+              src="./../../../assets/icon/coink-logo.png"
+              alt="coink logo"
+            ></ion-img>
+            <p class="auth__text ion-padding-top">
+              <ion-text color="primary"><b>LA ALCANCÍA QUE SIEMPRE TE ACOMPAÑA</b></ion-text>
+            </p>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <section>
+      <ion-grid [fixed]="true">
+        <ion-row class="auth__row">
+          <ion-col size="12" size-md="6">
+            <ion-button
+              expand="block"
+              routerLink="/register"
+              color="primary"
+              shape="round"
+              class="auth__button auth__button--primary"
+            ><b>REGÍSTRATE</b></ion-button>
+          </ion-col>
+          <ion-col size="12" size-md="6">
+            <ion-button
+              expand="block"
+              (click)="openAlert()"
+              color="secondary"
+              shape="round"
+              class="auth__button auth__button--secondary"
+            >INGRESA</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </section>
+  </div>
+</ion-content>

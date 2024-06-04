@@ -1,0 +1,153 @@
+<section class="personal__account__data-content" [formGroup]="personalInformationForm" (onSubmit)="onSubmit()">
+  <ion-grid fixed class="ion-margin-vertical ion-no-padding">
+    <ion-row>
+      <ion-col size="12">
+        <ion-text color="secondary">
+          <p><b>Documento de identidad</b></p>
+        </ion-text>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12" size-md="6">
+        <ion-item>
+          <ion-select label="Tipo de documento" label-placement="floating" formControlName="documentType" interface="popover">
+            <ion-select-option
+              *ngFor="let documentType of documentTypes"
+              [value]="documentType.notation">
+                {{ documentType.description }}
+            </ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+      <ion-col size="12" size-md="6">
+        <ion-item>
+          <ion-input
+            type="number"
+            inputmode="numeric"
+            label="Número de documento"
+            labelPlacement="floating"
+            formControlName="documentNumber"
+            [errorText]="getErrors('documentNumber')"
+          ></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col size="12" size-md="6">
+        <ion-item>
+          <ion-input
+            type="date"
+            [max]="currentDate"
+            label="Fecha de expedición del documento"
+            labelPlacement="floating"
+            formControlName="documentIssueDate"
+            [errorText]="getErrors('documentIssueDate')"
+          ></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col size="12" size-md="6">
+        <ion-item>
+          <ion-input
+            type="date"
+            [max]="currentDate"
+            label="Fecha de nacimiento"
+            labelPlacement="floating"
+            formControlName="dateOfBirth"
+            [errorText]="getErrors('dateOfBirth')"
+          ></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col size="12" size-md="6">
+        <ion-item>
+          <ion-select label="Genero" label-placement="floating" formControlName="gender" interface="popover">
+            <ion-select-option
+              *ngFor="let gender of genders"
+              [value]="gender.notation">
+                {{ gender.description }}
+            </ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+        <ion-text color="secondary">
+          <p><b>Configura tu cuenta</b></p>
+        </ion-text>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12" size-md="6">
+        <ion-item>
+          <ion-input
+            type="email"
+            label="Correo electrónico"
+            labelPlacement="floating"
+            formControlName="email"
+            [errorText]="getErrors('email')"
+          ></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col size="12" size-md="6">
+        <ion-item>
+          <ion-input
+            type="email"
+            label="Confirmar correo electrónico"
+            labelPlacement="floating"
+            formControlName="confirmEmail"
+            [errorText]="getErrors('confirmEmail')"
+          ></ion-input>
+          <ion-icon
+            *ngIf="!confirmEmail?.errors?.['fieldsMismatch'] && (confirmEmail?.touched && confirmEmail?.dirty)"
+            name="checkmark-outline"
+            color="primary"
+            slot="end"
+          ></ion-icon>
+        </ion-item>
+      </ion-col>
+      <ion-col size="12" size-md="6">
+        <ion-item>
+          <ion-input
+            type="{{ showPin ? 'number' : 'password' }}"
+            inputmode="numeric"
+            label="PIN de seguridad"
+            labelPlacement="floating"
+            formControlName="securityPIN"
+            [errorText]="getErrors('securityPIN')"
+          ></ion-input>
+          <ion-icon name="{{ showPin ? 'eye-off' : 'eye' }}" slot="end" (click)="showPin = !showPin"></ion-icon>
+        </ion-item>
+      </ion-col>
+      <ion-col size="12" size-md="6">
+        <ion-item>
+          <ion-input
+            type="{{ showConfirmationPin ? 'number' : 'password' }}"
+            inputmode="numeric"
+            label="Confirmar PIN de seguridad"
+            labelPlacement="floating"
+            formControlName="confirmSecurityPIN"
+            [errorText]="getErrors('confirmSecurityPIN')"
+          ></ion-input>
+          <ion-icon
+            *ngIf="!confirmSecurityPIN?.errors?.['fieldsMismatch'] && (confirmSecurityPIN?.touched && confirmSecurityPIN?.dirty)"
+            name="checkmark-outline"
+            color="primary"
+            slot="end"
+          ></ion-icon>
+          <ion-icon name="{{ showConfirmationPin ? 'eye-off' : 'eye' }}" slot="end" (click)="showConfirmationPin = !showConfirmationPin;"></ion-icon>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-justify-content-center ion-padding-vertical">
+      <ion-col size="12" sizeMd="6" sizeLg="4" sizeXl="3" class="ion-margin-vertical">
+        <ion-button
+          type="submit"
+          (click)="onSubmit()"
+          expand="block"
+          color="primary"
+          shape="round"
+          class="custom-button"
+          [disabled]="personalInformationForm.invalid"
+        ><b>SIGUIENTE</b></ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</section>

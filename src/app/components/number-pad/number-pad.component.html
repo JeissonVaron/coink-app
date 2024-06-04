@@ -1,0 +1,34 @@
+<section class="number__pad-content">
+  <ion-grid fixed class="ion-margin-vertical ion-no-padding">
+    <ion-row>
+      <ion-col size="12">
+        <div class="number__pad-content--input" [class.full]="phoneNumber.value">{{ phoneNumber.value | phoneNumberFormat }}</div>
+        <ion-text class="number__pad-content--input-errors" *ngIf="phoneNumber.invalid && (phoneNumber.dirty || phoneNumber.touched)">
+          <span *ngIf="phoneNumber.errors && phoneNumber.errors['pattern']">
+            El número de teléfono debe comenzar con 3.
+          </span>
+          <span *ngIf="phoneNumber.errors && phoneNumber.errors['minlength'] && !phoneNumber.errors['pattern']">
+            Este campo debe tener al menos 10 caracteres.
+          </span>
+        </ion-text>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <section>
+    <ion-grid fixed>
+      <ion-row>
+        <ion-col class="number__pad-content--buttons" size="4" *ngFor="let input of inputs">
+          <ion-button color="secondary" fill="clear" (click)="setValueNumberPad(input)">
+            <span *ngIf="!isIcon(input)">{{ input }}</span>
+            <ion-icon *ngIf="isIcon(input) && input === 'delete'" name="close-outline"></ion-icon>
+            <ion-icon
+              *ngIf="isIcon(input) && input === 'check'"
+              color="{{ numberPadForm.valid ? 'primary': 'disabled' }}"
+              name="checkmark-circle">
+            </ion-icon>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </section>
+</section>

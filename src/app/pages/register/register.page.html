@@ -1,0 +1,32 @@
+<ion-header>
+  <app-toolbar
+    [returnRoute]="returnRoute"
+    [title]="toolbarTitle"
+    [steps]="steps"
+    [currentStep]="registerFormSwitch"
+    (changeStep)="onChangeStep($event)">
+  </app-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <section class="register__content">
+    <app-informative-oink [type]="informativeOinkType"></app-informative-oink>
+
+    <section class="register__content-switch" [ngSwitch]="registerFormSwitch">
+      <app-number-pad
+        *ngSwitchCase="'cellPhoneNumber'"
+        (fullPhoneNumber)="activateStepTwo($event)"
+      ></app-number-pad>
+
+      <app-personal-data-registration-form
+        *ngSwitchCase="'personalAccountData'"
+        (personalInformation)="activateStepThree($event)"
+      ></app-personal-data-registration-form>
+
+      <app-terms-conditions
+        *ngSwitchCase="'termsAndConditions'"
+        (termsAndConditions)="save()"
+      ></app-terms-conditions>
+    </section>
+  </section>
+</ion-content>

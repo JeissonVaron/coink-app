@@ -1,0 +1,15 @@
+<ion-header>
+  <app-toolbar
+    [title]="'Home'"
+    [returnRoute]="returnRoute"></app-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="12">
+        <pre [innerHTML]="formatJson(storedData)"></pre>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

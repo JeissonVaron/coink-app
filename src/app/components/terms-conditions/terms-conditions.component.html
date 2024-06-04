@@ -1,0 +1,40 @@
+<section  [formGroup]="termsConditionsForm" (onSubmit)="onSubmit()">
+<section  [formGroup]="termsConditionsForm" (onSubmit)="onSubmit()">
+  <ion-grid fixed class="ion-margin-vertical ion-no-padding">
+    <ion-row>
+      <ion-col size="12">
+        <ion-text color="secondary">
+          <p class="bold">{{ TERMS_CONDITIONS.title }}</p>
+        </ion-text>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+        <ion-text>
+          <span [innerHTML]="TERMS_CONDITIONS.content"></span>
+        </ion-text>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+        <ion-text color="secondary">
+          <p class="reed-contract bold" (click)="openTermsConditions()">{{ TERMS_CONDITIONS.linkTerms }}</p>
+        </ion-text>
+        <ion-checkbox mode="md" formControlName="termsAndConditionsAccepted" labelPlacement="end">{{ TERMS_CONDITIONS.labelCheckbox }}</ion-checkbox>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-justify-content-center ion-padding-vertical">
+      <ion-col size="12" sizeMd="6" sizeLg="4" sizeXl="3" class="ion-margin-vertical">
+        <ion-button
+          type="submit"
+          (click)="onSubmit()"
+          expand="block"
+          color="primary"
+          shape="round"
+          class="custom-button"
+          [disabled]="termsConditionsForm.invalid"
+        >{{ TERMS_CONDITIONS.accept }}</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</section>

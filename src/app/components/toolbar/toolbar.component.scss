@@ -1,0 +1,21 @@
+.stepper {
+
+  ion-grid {
+    width: 75%;
+  }
+  .container {
+    position: relative;
+  }
+
+  .container::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 1px; /* Grosor de la línea */
+    background-color: #757575; /* Color de la línea */
+    transform: translateY(-50%);
+  }
+}

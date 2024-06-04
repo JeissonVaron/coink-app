@@ -1,0 +1,12 @@
+.reed-contract {
+  text-decoration: underline;
+}
+
+ion-checkbox::part(label) {
+  color: #004b40;
+  margin-inline-start: 12px;
+}
+
+ion-checkbox::part(mark) {
+  stroke: #fff;
+}

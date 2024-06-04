@@ -1,0 +1,111 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "@ionic/angular/css/normalize.css";
+@import "@ionic/angular/css/structure.css";
+@import "@ionic/angular/css/typography.css";
+@import "@ionic/angular/css/display.css";
+
+/* Optional CSS utils that can be commented out */
+@import "@ionic/angular/css/padding.css";
+@import "@ionic/angular/css/float-elements.css";
+@import "@ionic/angular/css/text-alignment.css";
+@import "@ionic/angular/css/text-transformation.css";
+@import "@ionic/angular/css/flex-utils.css";
+
+:root {
+  --ion-color-primary: #3880ff;
+  --ion-color-primary-rgb: 56, 128, 255;
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-contrast-rgb: 255, 255, 255;
+  --ion-color-primary-shade: #3171e0;
+  --ion-color-primary-tint: #4c8dff;
+
+  --ion-color-secondary: #3dc2ff;
+  --ion-color-secondary-rgb: 61, 194, 255;
+  --ion-color-secondary-contrast: #ffffff;
+  --ion-color-secondary-contrast-rgb: 255, 255, 255;
+  --ion-color-secondary-shade: #36abe0;
+  --ion-color-secondary-tint: #50c8ff;
+
+  --ion-background-color: #ffffff;
+  --ion-text-color: #000000;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ion-background-color: #ffffff;
+    --ion-text-color: #000000;
+  }
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.custom-button {
+  min-height: 50px;
+  @extend .bold;
+}
+
+.title {
+  color: var(--ion-color-secondary);
+  font-size: 20px;
+  @extend .bold;
+}
+
+.auto-width-item {
+  width: auto;
+}
+
+ion-button.button-disabled {
+  --ion-color-base: var(--color-disabled) !important;
+  --ion-color-contrast: var(--colot-text-disabled) !important;
+  --box-shadow: none;
+}
+
+ion-input {
+  label {
+    .label-text-wrapper {
+      color: var(--ion-color-tertiary);
+    }
+  }
+
+  .input-bottom {
+    border-top: 0px !important;
+  }
+}
+
+ion-input.has-focus {
+  label {
+    .label-text-wrapper {
+      color: var(--ion-color-tertiary);
+    }
+  }
+}
+
+ion-select.ion-untouched::part(label),
+ion-select.ion-valid::part(label) {
+  color: var(--ion-color-tertiary);
+}
+
+.welcome-modal {
+  --height: auto;
+  --width: 80%;
+}
+
+.welcome-modal::part(content) {
+  border-radius: 10px;
+}
