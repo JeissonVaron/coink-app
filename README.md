@@ -45,6 +45,8 @@ nombre-del-proyecto/
 - [Ionic CLI](https://ionicframework.com/docs/cli)
 - [Android Studio](https://developer.android.com/studio)
 
+
+
 ## Instalación y Compilación
 
 1. Clona el repositorio:
@@ -93,6 +95,14 @@ nombre-del-proyecto/
    npx cap open android
    ```
 
+## Cobertura de pruebas unitarias
+   ```sh
+      - 96.11% Statements 198/206
+      - 94.44% Branches 34/36
+      - 96.72% Functions 59/61
+      - 96.09% Lines 197/205
+   ```
+
 ## Notas adicionales:
-1. Asegúrate de tener Android Studio configurado correctamente para la compilación de aplicaciones móviles.
-2. Puedes personalizar los recursos generados en resources/ antes de ejecutar npx cap sync.
+- Asegúrate de tener Android Studio configurado correctamente para la compilación de aplicaciones móviles.
+- Puedes personalizar los recursos generados en resources/ antes de ejecutar npx cap sync.

@@ -21,4 +21,17 @@ describe('TermsConditionsComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should open terms and conditions in a new tab', () => {
+    spyOn(window, 'open');
+    component.openTermsConditions();
+    expect(window.open).toHaveBeenCalledWith('https://coink.com/terminos-y-condiciones/', '_blank');
+  });
+
+  it('should emit true when form is valid', () => {
+    spyOn(component.termsAndConditions, 'emit');
+    component.termsConditionsForm.controls['termsAndConditionsAccepted'].setValue(true);
+    component.onSubmit();
+    expect(component.termsAndConditions.emit).toHaveBeenCalledWith(true);
+  });
 });

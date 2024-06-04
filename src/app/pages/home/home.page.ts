@@ -7,7 +7,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./home.page.scss'],
 })
 export class HomePage {
-  storedData: any;
+  storedData: any = {};
   returnRoute: string = '/auth';
   
   constructor(private router: Router) {

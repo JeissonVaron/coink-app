@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, Input, OnChanges } from '@angular/core';
 
 @Component({
   selector: 'app-informative-oink',
@@ -13,7 +13,7 @@ export class InformativeOinkComponent implements OnChanges {
 
   constructor() {}
 
-  ngOnChanges(changes: SimpleChanges) {
+  ngOnChanges() {
     this.showInformationByType();
   }
 
