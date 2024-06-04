@@ -50,8 +50,8 @@ nombre-del-proyecto/
 1. Clona el repositorio:
 
    ```sh
-   git clone https://github.com/usuario/nombre-del-proyecto.git
-   cd nombre-del-proyecto
+   git clone https://github.com/JeissonVaron/coink-app.git
+   cd coink-app
    ```
 
 2. Instala las dependencias:
