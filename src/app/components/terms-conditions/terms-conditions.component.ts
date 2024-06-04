@@ -30,7 +30,8 @@ export class TermsConditionsComponent implements OnInit {
   }
 
   openTermsConditions() {
-    console.log('Abrir terminos y condiciones :>> ');
+    const url = 'https://coink.com/terminos-y-condiciones/';
+    window.open(url, '_blank');
   }
 
   onSubmit() {

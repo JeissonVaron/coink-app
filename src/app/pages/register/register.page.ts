@@ -29,7 +29,7 @@ export class RegisterPage implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.activateStepThree(this.personalInformation);
+    this.activateStepOne();
   }
 
   activateStepOne() {
